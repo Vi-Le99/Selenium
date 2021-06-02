@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="2" verbose="1" name="Example Suite" annotations="JDK" parallel="tests">
+  <test name="AAA">
+    <classes>
+      <class name="suite1.test01"/>
+    </classes>
+  </test> <!-- Test -->
+  
+  <test name="BBB">
+    <classes>
+      <class name="suite2.test02"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
