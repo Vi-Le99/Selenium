@@ -1,7 +1,6 @@
 package pomAssignment;
 
 import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -16,7 +15,7 @@ public class TestLogin1 {
 	public String path = "C:\\Selenium\\driver\\chromedriver.exe";
 	public WebDriver driver;
 	Login1 objLogin;
-	String expectualString = "Sign in to GitHub · GitHub";
+	String expectualString = "Sign in to GitHub Â· GitHub";
 
 	@BeforeTest
 	public void openBrowser() {
@@ -27,18 +26,14 @@ public class TestLogin1 {
 		objLogin = new Login1(driver);
 	}
 
-	//@Test(dataProvider = "Information", dataProviderClass = InformationTable.class)
-	//public void f(String user, String pass) {
-	
 	@Test
-	public void f() {
-		driver.findElement(By.linkText("Sign in")).click();	
-//		System.out.println(driver.getTitle());
+	public void testLogin() {
+		driver.findElement(By.linkText("Sign in")).click();
 		objLogin.loginPageGithub("17521254@gm.uit.edu.vn", "@Khong");
 		System.out.println(driver.getTitle());
 		Assert.assertEquals(driver.getTitle(), expectualString);
 	}
-	
+
 	@AfterTest
 	public void closeBrowser() {
 		driver.close();
